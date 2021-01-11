@@ -23,4 +23,14 @@ public class Galerie {
     
     @OneToMany(mappedBy = "organisateur")
     private List<Exposition> evenements = new LinkedList<>();
+    
+    public float CAannuel(int annee){
+        float calculCAAnnuel =0;
+        for(Exposition e : evenements){
+            if(e.getDebut().getYear()==annee && (e.getDebut().getDayOfYear()+e.getDuree())<365){
+            calculCAAnnuel += e.CA();
+            }
+        }
+        return calculCAAnnuel;
+    }
 }

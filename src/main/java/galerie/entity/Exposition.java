@@ -46,11 +46,15 @@ public class Exposition {
     @Column(unique=true)
     private int duree;
     
-    /*public float CA(){
-       
-    }*/
+    public float CA(){
+        float calculCA=0;
+        for(Transaction t:ventes){
+            calculCA += t.getPrixVente();
+        }
+        return calculCA;       
+    }
     @ManyToOne
-    private Galerie evenements;
+    private Galerie organisateur;
     
     @OneToMany(mappedBy = "lieuDeVente")
     private List<Transaction> ventes = new LinkedList<>();

@@ -45,4 +45,14 @@ public class Personne {
     }
     @OneToMany(mappedBy = "client")
     private List<Transaction> achats = new LinkedList<>();
+    
+    public float BudgetArt(int annee){
+        float calculBudget =0;
+        for(Transaction t :achats){
+            if(t.getVenduLe().getYear()==annee){
+            calculBudget += t.getPrixVente();
+            }
+        }
+        return calculBudget;
+    }
 }
