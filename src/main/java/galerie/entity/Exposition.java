@@ -13,6 +13,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import lombok.Getter;
@@ -46,13 +47,16 @@ public class Exposition {
     private int duree;
     
     /*public float CA(){
-        float somme
+       
     }*/
     @ManyToOne
     private Galerie evenements;
     
     @OneToMany(mappedBy = "lieuDeVente")
     private List<Transaction> ventes = new LinkedList<>();
+    
+    @ManyToMany
+    List<Tableau> oeuvres = new LinkedList<>();
     
     
 }
