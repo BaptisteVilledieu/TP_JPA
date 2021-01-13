@@ -20,14 +20,14 @@ import org.springframework.test.context.jdbc.Sql;
 @DataJpaTest
 public class PersonneRepositoryTest {
     @Autowired
-    private GalerieRepository PersonneDAO;
+    private PersonneRepository PersonneDAO;
 
     @Test
     @Sql("test-data.sql") // On peut charger des donnnées spécifiques pour un test
     public void onSaitCompterLesEnregistrements() {
         log.info("On compte les enregistrements de la table 'Personne'");
-        int combienDansLeJeuDeTest = 1; 
+        int combienDansLeJeuDeTest = 5; 
         long nombre = PersonneDAO.count();
-        assertEquals(combienDansLeJeuDeTest, nombre, "On doit trouver 1 personne" );
+        assertEquals(combienDansLeJeuDeTest, nombre, "On doit trouver 5 personnes" );
     }
 }

@@ -21,14 +21,14 @@ import org.springframework.test.context.jdbc.Sql;
 public class ExpositionRepositoryTest {
 
     @Autowired
-    private GalerieRepository ExpositionDAO;
+    private ExpositionRepository ExpositionDAO;
 
     @Test
     @Sql("test-data.sql") // On peut charger des donnnées spécifiques pour un test
     public void onSaitCompterLesEnregistrements() {
         log.info("On compte les enregistrements de la table 'Exposition'");
-        int combienDansLeJeuDeTest = 1; 
+        int combienDansLeJeuDeTest = 2; 
         long nombre = ExpositionDAO.count();
-        assertEquals(combienDansLeJeuDeTest, nombre, "On doit trouver 1 Exposition" );
+        assertEquals(combienDansLeJeuDeTest, nombre, "On doit trouver 2 Expositions" );
     }
 }

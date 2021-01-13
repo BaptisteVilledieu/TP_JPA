@@ -32,19 +32,15 @@ public class Tableau {
 
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Integer id;
-
-    @Column(unique=true)
+   
     @NonNull
     private String titre;
-    
-    @Column(unique=true)
+        
     @NonNull
     private String support;
     
-    @Column(unique=true)
     private int largeur;
     
-    @Column(unique=true)
     private int hauteur; 
     
     @ManyToOne

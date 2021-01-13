@@ -31,11 +31,9 @@ public class Transaction {
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Integer id;
 
-    @Column(unique=true)
     @NonNull
     private LocalDate venduLe;
     
-    @Column(unique=true)
     private float prixVente;
     
     @ManyToOne

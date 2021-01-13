@@ -35,15 +35,12 @@ public class Exposition {
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY) 
     private Integer id;
 
-    @Column(unique=true)
     @NonNull
     private LocalDate debut;
     
-    @Column(unique=true)
     @NonNull
     private String intitule;
     
-    @Column(unique=true)
     private int duree;
     
     public float CA(){
