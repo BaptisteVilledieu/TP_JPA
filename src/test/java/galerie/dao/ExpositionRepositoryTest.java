@@ -35,8 +35,8 @@ public class ExpositionRepositoryTest {
         assertEquals(combienDansLeJeuDeTest, nombre, "On doit trouver 2 Expositions" );
     }
         @Test 
-    public void onSaitAjouterUneGalerie(){
-        log.info("On ajoute une galerie à la table 'Galerie'");
+    public void onSaitAjouterUneExposition(){
+        log.info("On ajoute une exposition à la table 'Exposition'");
         //On crée une Exposition
         Exposition exposition = new Exposition(LocalDate.now(),"5 rue de l'eglise, Castres");
         //On enregistre l'exposition 
@@ -45,6 +45,6 @@ public class ExpositionRepositoryTest {
         List<Exposition> lesExpositions = expositionDAO.findAll();
         Exposition expositionRecup = lesExpositions.get(0);
         
-        assertEquals(exposition, expositionRecup,"Les personnes devraient etre les memes");
+        assertEquals(exposition, expositionRecup,"Les expositions devraient etre les memes");
     }
 }

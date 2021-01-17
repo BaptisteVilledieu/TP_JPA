@@ -40,7 +40,7 @@ public class GalerieRepositoryTest {
         List<Galerie> lesGaleries = galerieDAO.findAll();
         Galerie galerieRecup = lesGaleries.get(0);
         
-        assertEquals(galerie, galerieRecup,"Les personnes devraient etre les memes");
+        assertEquals(galerie, galerieRecup,"Les galeries devraient etre les memes");
     }
 
 }
