@@ -19,6 +19,7 @@ public class Galerie {
     @NonNull
     private String adresse;
     
+    
     @OneToMany(mappedBy = "organisateur")
     private List<Exposition> evenements = new LinkedList<>();
     

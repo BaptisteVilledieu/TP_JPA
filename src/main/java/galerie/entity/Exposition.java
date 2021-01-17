@@ -43,6 +43,8 @@ public class Exposition {
     
     private int duree;
     
+
+    
     public float CA(){
         float calculCA=0;
         for(Transaction t:ventes){

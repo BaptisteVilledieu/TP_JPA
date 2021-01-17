@@ -21,7 +21,7 @@ public interface ExpositionRepository extends JpaRepository<Exposition, Integer>
      */
     /*@Query("SELECT SUM(id.prixVente)"
 		+ "FROM Transaction t "
-		+ "JOIN t.exposition e "
+		+ "INNER JOIN t.exposition e "
 		+ "WHERE e.id = id ")
     float chiffreAffairePour(Integer id);*/
 }

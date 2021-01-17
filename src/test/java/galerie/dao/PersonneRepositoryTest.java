@@ -5,6 +5,8 @@
  */
 package galerie.dao;
 
+import galerie.entity.Personne;
+import java.util.List;
 import lombok.extern.log4j.Log4j2;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.Test;
@@ -20,14 +22,29 @@ import org.springframework.test.context.jdbc.Sql;
 @DataJpaTest
 public class PersonneRepositoryTest {
     @Autowired
-    private PersonneRepository PersonneDAO;
+    private PersonneRepository personneDAO;
 
     @Test
     @Sql("test-data.sql") // On peut charger des donnnées spécifiques pour un test
     public void onSaitCompterLesEnregistrements() {
         log.info("On compte les enregistrements de la table 'Personne'");
         int combienDansLeJeuDeTest = 5; 
-        long nombre = PersonneDAO.count();
+        long nombre = personneDAO.count();
         assertEquals(combienDansLeJeuDeTest, nombre, "On doit trouver 5 personnes" );
+    }
+    
+    @Test
+    public void onSaitAjouterDesPersonnes(){
+        log.info("On ajoute des personnes dans la table Personne");
+        //On va creer une personne
+        Personne perso = new Personne ("perso","5 rue du perso");
+        //On enregistre la personne
+        personneDAO.save(perso);
+        //On recupere la table Personne
+        List<Personne> lesPersonnes = personneDAO.findAll();
+        Personne persoRecup = lesPersonnes.get(0);
+        
+        assertEquals(perso, persoRecup,"Les personnes devraient etre les memes");
+        
     }
 }
