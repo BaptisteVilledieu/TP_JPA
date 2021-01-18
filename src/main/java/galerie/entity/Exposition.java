@@ -27,8 +27,8 @@ import lombok.ToString;
  *
  * @author bapti
  */
-    @Getter @Setter @NoArgsConstructor @RequiredArgsConstructor @ToString
-    @Entity 
+@Getter @Setter @NoArgsConstructor @RequiredArgsConstructor @ToString
+@Entity 
 public class Exposition {
     
 
